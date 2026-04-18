@@ -1,0 +1,334 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* General Page Setup */
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  padding: 0;
+  margin: 0;
+}
+
+/* Header */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #f57c00;
+  color: white;
+  padding: 15px 40px;
+  flex-wrap: wrap;
+  border-bottom: 1px solid #ccc;
+}
+
+ .logo img {
+  height: 70px;         
+  width: auto;          
+  display: block;
+  margin: 0;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: flex-end; /* moves links to the right */
+  background-color: #f4f4f4;
+  padding: 10px;
+}
+
+nav ul li {
+  margin: 0 15px;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: #333;
+  font-weight: bold;
+}
+
+
+/* Banner / Hero Section */
+.banner {
+  text-align: center;
+  background-color: #fff3e0;
+  padding: 60px 20px;
+}
+
+.banner h1 {
+  font-size: 2em;
+  margin-bottom: 20px;
+}
+
+.search-bar {
+  margin-top: 15px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.search-bar input {
+  padding: 10px;
+  width: 300px;
+  max-width: 80%;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.search-bar button {
+  background-color: #f57c00;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.search-bar button:hover {
+  background-color: #e65100;
+}
+
+.tagline {
+  font-style: italic;
+  color: #555;
+}
+
+/* Featured Section */
+.featured {
+  padding: 40px 20px;
+  text-align: center;
+}
+
+.featured h2 {
+  margin-bottom: 30px;
+}
+
+.cards {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.card {
+  background-color: #fff3e0;
+  border-radius: 10px;
+  padding: 20px;
+  width: 250px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.card img {
+  width: 100%;
+  border-radius: 10px;
+  margin-bottom: 10px;
+}
+
+.card button {
+  background-color: #f57c00;
+  color: white;
+  border: none;
+  padding: 8px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.card button:hover {
+  background-color: #e65100;
+}
+
+/* Section Layouts */
+section {
+  padding: 40px 20px;
+}
+
+.featured, .about, .directory, .spot-details, .map-page, .feedback {
+  max-width: 1200px;
+  margin: auto;
+}
+
+/* Cards (for food spots) */
+.cards {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  justify-content:center;
+}
+
+.card {
+  border: 1px solid #ccc;
+  padding: 15px;
+  width: 250px;
+  text-align: center;
+}
+
+/* Forms (Feedback Page) */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  max-width: 500px;
+  margin: auto;
+}
+form {
+  max-width: 500px;
+  margin: auto;
+  padding: 20px;
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+}
+
+/* Form heading */
+form h2 {
+  text-align: center;
+  color: #584a02; /* deep green */
+  margin-bottom: 20px;
+}
+
+/* Labels */
+label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: bold;
+  color: #333;
+}
+
+/* Inputs, selects, textareas */
+input[type="text"],
+input[type="email"],
+select,
+textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 1em;
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+/* Focus effect */
+input:focus,
+select:focus,
+textarea:focus {
+  border-color: #ff9800; /* warm orange accent */
+  box-shadow: 0 0 5px rgba(255,152,0,0.5);
+  outline: none;
+}
+
+/* Submit button */
+button {
+  background: #f39f03; /* deep green */
+  color: #fff;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 6px;
+  font-size: 1em;
+  cursor: pointer;
+  transition: background 0.3s;
+  width: 100%;
+}
+
+button:hover {
+  background: #1b5e20; /* darker green on hover */
+}
+
+/* Success message popup */
+.success-message {
+  display: none; /* hidden by default */
+  max-width: 500px;
+  margin: 20px auto;
+  padding: 15px;
+  background: #e8f5e9; /* light green background */
+  border: 1px solid #2e7d32;
+  border-radius: 6px;
+  color: #2e7d32;
+  font-weight: bold;
+  text-align: center;
+}
+
+input, textarea, button {
+  padding: 10px;
+  border: 1px solid #ccc;
+}
+
+/* Footer */
+footer {
+  background-color: #f57c00;
+  color: white;
+  text-align: center;
+  padding: 15px;
+  border-top: 1px solid #ccc;
+  margin-top: 40px;
+  font-size: 0.9em;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  header{
+    flex-direction: column;
+    text-align: center;
+  }
+
+  nav ul {
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 10px;
+    align-items: center;
+  }
+  
+   .banner h1 {
+    font-size: 1.5em;
+  }
+
+  .cards {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .card {
+    width: 90%;
+  }
+}
+
+  @media (max-width: 480px) {
+  .banner h1 {
+    font-size: 1.2em;
+  }
+
+  .search-bar input {
+    width: 90%;
+  }
+
+  .search-bar button {
+    width: 90%;
+  }
+
+  footer {
+    font-size: 0.9em;
+  }
+}
+  
+  /* Demo borders to visualize collapse */
+.col-md-8 {
+  border: 2px solid #f57c00;   /* orange border for main content */
+  background-color: #8c5d11;   /* light background */
+  padding: 15px;
+}
+
+.col-md-4 {
+  border: 2px solid #4e342e;   /* brown border for sidebar */
+  background-color: #e0f7fa;   /* light teal background */
+  padding: 15px;
+}
+
+/* Row visualization */
+.row {
+  margin-bottom: 20px;
+}
+
