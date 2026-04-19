@@ -177,6 +177,72 @@ nav ul li a {
   background-color: #e65100;
 }
 
+.featured-spots {
+  text-align: center;
+  padding: 40px 20px;
+}
+
+.featured-spots h2 {
+  color: #f57c00;
+  margin-bottom: 30px;
+}
+
+.spots-container {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap; /* allows wrapping on smaller screens */
+}
+
+.spot-card {
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  width: 280px;
+  text-align: left;
+  overflow: hidden;
+  transition: transform 0.2s;
+}
+
+.spot-card:hover {
+  transform: translateY(-5px);
+}
+
+.spot-card img {
+  width: 100%;
+  height: 120px;
+  object-fit: cover;
+}
+
+.spot-info {
+  padding: 15px;
+}
+
+.spot-label {
+  font-size: 0.9rem;
+  color: #777;
+}
+
+.spot-name {
+  margin: 10px 0;
+  font-size: 1.2rem;
+  color: #333;
+}
+
+.btn-view {
+  background: #f57c00;
+  color: #fff;
+  border: none;
+  padding: 8px 15px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.btn-view:hover {
+  background: #ff9800;
+}
+
+
 /* Section Layouts */
 section {
   padding: 40px 20px;
@@ -369,3 +435,11 @@ footer {
   margin-bottom: 20px;
 }
 
+/* Leaflet Map Styling */
+#map { 
+    height: 500px; 
+    width: 100%;   
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    z-index: 1; /* Keeps the map underneath your dropdown menus if you add them later */
+}
