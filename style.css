@@ -69,11 +69,35 @@ nav ul li a {
 }
 
 .banner-image img {
-  max-width: 100%;
-  height: auto;
+  width: 100%;          /* fills the entire width */
+  height: 400px;        /* default desktop height */
+  object-fit: cover;    /* crops nicely without distortion */
   border-radius: 8px;
   box-shadow: 0 2px 6px rgba(0,0,0,0.2);
 }
+
+/* Tablet screens */
+@media (max-width: 992px) {
+  .banner-image img {
+    height: 300px;      
+  }
+}
+
+/* Mobile screens */
+@media (max-width: 600px) {
+  .banner-image img {
+    height: 200px;      
+  }
+
+  .banner-content h1 {
+    font-size: 1.8rem;
+  }
+
+  .search-bar input {
+    width: 200px;     
+  }
+}
+
 
 .search-bar {
   margin-top: 15px;
