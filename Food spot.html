@@ -12,34 +12,60 @@
     <div class="logo">
     <img src="Logo.png" alt="Savanna Eats Logo">
   </div>
-    <nav>
-  <ul>
-    <li><a href="index.html">Home</a></li>
-    <li><a href="about.html">About</a></li>
-     <li><a href="Food spots directory.html">Directory</a></li>
-     <li><a href="Food spot.html">Spots</a></li>
-    <li><a href="Map.html">Map</a></li>
-    <li><a href="Feedback.html">Feedback</a></li>
-  </ul>
-    </nav>
+   <nav class="main-nav">
+  <a href="index.html" class="nav-box">Home</a>
+  <a href="about.html" class="nav-box">About</a>
+  <a href="Food spots directory.html" class="nav-box">Directory</a>
+  <a href="Food spot.html" class="nav-box">Spots</a>
+  <a href="Map.html" class="nav-box">Map</a>
+  <a href="Feedback.html" class="nav-box">Feedback</a>
+</nav>
 
   </header>
 
-  <section class="spot-details">
-    <div class="left">
-      <div class="food-images">Food Photos</div>
-      <div class="menu-preview">Menu Items</div>
-      <div class="map">Map Location</div>
+<section class="foodspot-page">
+  <div class="foodspot-container">
+
+   <div class="foodspot-left">
+  <!-- Food Photos -->
+  <div class="photos">
+    <h3>Food Photos</h3>
+    <div class="photo-gallery">
+      <img src="images/food1.jpg" alt="Dish 1">
+      <img src="images/food2.jpg" alt="Dish 2">
+      <img src="images/food3.jpg" alt="Dish 3">
     </div>
-    <div class="right">
-      <h1>Spot Name</h1>
-      <p>Address Info</p>
-      <p>Opening Hours</p>
-      <p>Reviews ★★★★☆</p>
-      <p>Description text...</p>
-      <button>Visit Location</button>
-    </div>
-  </section>
+  </div>
+
+  <!-- Menu Items -->
+  <div class="menu">
+    <h3>Menu Items</h3>
+    <ul class="menu-list">
+      <li>Dish 1 - Description and Price</li>
+      <li>Dish 2 - Description and Price</li>
+      <li>Dish 3 - Description and Price</li>
+    </ul>
+  </div>
+
+    <div class="foodspot-right">
+  <h2 class="spot-name">Savanna Grill</h2>
+  <p class="address"><strong>Address:</strong> <!-- Address text goes here --></p>
+  <p class="hours"><strong>Opening Hours:</strong> <!-- Opening hours text goes here --></p>
+  <p class="reviews"><strong>Reviews:</strong> <!-- Reviews text goes here --></p>
+
+  <!-- Spot Description -->
+  <div class="description-section">
+    <h3>Description</h3>
+    <p>
+      <!-- Description text goes here -->
+    </p>
+  </div>
+
+  <button class="btn-visit">Visit Location</button>
+
+  </div>
+</section>
+
 
   <footer>
      <p>Contact Info | Social Media | © 2026 Savanna Eats</p>

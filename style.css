@@ -17,8 +17,8 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #f57c00;
-  color: white;
+  background-color: #6b705c;
+  color: #f0efeb;
   padding: 10px 25px;
   flex-wrap: wrap;
   border-bottom: 1px solid #ccc;
@@ -47,6 +47,45 @@ nav ul li a {
   text-decoration: none;
   color: #333;
   font-weight: bold;
+}
+
+/* Navigation Container */
+.main-nav {
+  display: flex;
+  gap: 15px; /* Space between the boxes */
+  flex-wrap: wrap; /* Allows boxes to wrap on smaller screens */
+  padding: 15px 0;
+}
+
+/* The Individual Charcoal Boxes */
+.nav-box {
+  background-color: #36454F; /* Charcoal */
+  color: #ffffff; /* White text */
+  text-decoration: none;
+  padding: 10px 20px;
+  border-radius: 8px; /* Rounded corners */
+  font-weight: 500;
+  transition: all 0.3s ease; /* Makes the shrinking smooth */
+  display: inline-block;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1); 
+}
+
+/* Stop text from changing color when hovered */
+.nav-box:hover, .nav-box:focus {
+  color: #ffffff; 
+}
+
+/* Hover Effect: Shrink the box */
+.nav-box:hover {
+  transform: scale(0.85); /* Shrinks to 85% */
+  opacity: 0.9;
+}
+
+/* Active/Clicked State: Twilight Blue */
+.nav-box.active {
+  background-color: #2c4c7c; /* Twilight Blue */
+  transform: scale(1); /* Ensures the active box stays full size */
+  box-shadow: 0 0 12px rgba(44, 76, 124, 0.6); /* Twilight blue glow */
 }
 
 
@@ -362,8 +401,8 @@ input, textarea, button {
 
 /* Footer */
 footer {
-  background-color: #f57c00;
-  color: white;
+  background-color: #2f3e46;
+  color: #b7b7a4;
   text-align: center;
   padding: 15px;
   border-top: 1px solid #ccc;
@@ -442,4 +481,169 @@ footer {
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0,0,0,0.1);
     z-index: 1; /* Keeps the map underneath your dropdown menus if you add them later */
+}
+
+.directory {
+  text-align: center;
+  padding: 40px 20px;
+}
+
+.directory h2 {
+  color: #f57c00;
+  margin-bottom: 30px;
+}
+
+#directory-container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: center;
+}
+
+.listing .card {
+  width: 100%;
+  max-width: 700px;
+  border-radius: 8px;
+  transition: transform 0.2s;
+}
+
+.listing .card:hover {
+  transform: translateY(-3px);
+}
+
+.listing .card-body {
+  padding: 20px;
+}
+
+.btn-group {
+  display: flex;
+  gap: 10px;
+}
+
+#savannaMap {
+  height: 450px;
+  width: 100%;
+  border-radius: 8px;
+  margin-top: 40px;
+}
+
+.foodspot-container {
+  display: flex;
+  gap: 40px;             
+  align-items: flex-start;
+  margin: 40px auto;
+  max-width: 1200px;     
+}
+
+.foodspot-left {
+  flex: 1;
+}
+.photo-gallery {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-bottom: 15px;
+}
+
+.photo-gallery img {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  border-radius: 6px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.menu-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.menu-list li {
+  background: #fff8f0;
+  margin-bottom: 6px;
+  padding: 6px 10px;
+  border-radius: 4px;
+  font-size: 0.9rem;
+  color: #333;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+}
+
+
+.foodspot-right {
+  flex: 1;
+}
+
+.foodspot-right h2 {
+  color: #f57c00;
+  margin-bottom: 15px;
+}
+
+.foodspot-right p {
+  margin-bottom: 10px;
+  font-size: 0.95rem;
+  color: #333;
+}
+
+.description-section,
+.view-section {
+  margin-bottom: 20px;
+}
+
+.description-section h3,
+.view-section h3 {
+  font-size: 1rem;
+  color: #444;
+  margin-bottom: 8px;
+}
+
+.view-input {
+  width: 100%;
+  min-height: 100px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-family: Arial, sans-serif;
+  font-size: 0.95rem;
+  resize: vertical;
+}
+
+.view-input:focus {
+  border-color: #f57c00;
+  outline: none;
+  box-shadow: 0 0 5px rgba(245, 124, 0, 0.4);
+}
+
+
+.foodspot-left > div,
+.foodspot-right > * {
+  margin-bottom: 20px;   
+}
+
+/* Button styling */
+.btn-visit {
+  background: #f57c00;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.btn-visit:hover {
+  background: #ff9800;
+}
+
+/* Responsive rule for mobile */
+@media (max-width: 768px) {
+  .foodspot-container {
+    flex-direction: column;  
+    gap: 20px;
+  }
+
+  .foodspot-left,
+  .foodspot-right {
+    flex: none;
+    width: 100%;             
+  }
 }

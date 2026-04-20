@@ -82,3 +82,25 @@ function focusOnSpot(spotId) {
     // Open the popup bubble automatically
     selectedMarker.openPopup();
 }
+// --- HIGHLIGHT THE ACTIVE NAVIGATION LINK ---
+
+// 1. Grab all the navigation boxes
+const navLinks = document.querySelectorAll('.nav-box');
+
+// 2. Get the exact URL of the page we are currently looking at
+const currentUrl = window.location.href;
+
+// 3. Loop through all the links
+navLinks.forEach(link => {
+    
+    // Check if the link's destination matches the current page URL
+    if (link.href === currentUrl) {
+        // If it matches, make it Twilight Blue!
+        link.classList.add('active');
+    } 
+    
+    // This extra line ensures "Home" lights up if you are just at the root domain (like 127.0.0.1:5500/)
+    else if (currentUrl.endsWith('/') && link.getAttribute('href') === 'index.html') {
+        link.classList.add('active');
+    }
+});
