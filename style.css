@@ -93,11 +93,11 @@ nav ul li a {
 .banner {
   text-align: center;
   padding: 40px 20px;
-  background-color: #fff3e0;
+  background-color: #f0efeb;
 }
 
 .banner-content h1 {
-  color: #f57c00;
+  color: #2f3e46;
   font-size: 2.5rem;
   margin-bottom: 10px;
 }
@@ -150,13 +150,15 @@ nav ul li a {
   padding: 10px;
   width: 300px;
   max-width: 80%;
-  border: 1px solid #ccc;
+  border: 1px solid #6b705c;
   border-radius: 5px;
+  background-color: #f0efeb;
+  color: #2f3e46;
 }
 
 .search-bar button {
-  background-color: #f57c00;
-  color: white;
+  background-color: #6b705c;
+  color: #ffffff;
   border: none;
   padding: 10px 20px;
   border-radius: 5px;
@@ -164,7 +166,7 @@ nav ul li a {
 }
 
 .search-bar button:hover {
-  background-color: #e65100;
+  background-color: #2f3e46;
 }
 
 .tagline {
@@ -204,16 +206,16 @@ nav ul li a {
 }
 
 .card button {
-  background-color: #f57c00;
-  color: white;
-  border: none;
+  background-color: #f0efeb;
+  color: #2f3e46;
+  border: 1px solid #6b705c;
   padding: 8px 15px;
   border-radius: 5px;
   cursor: pointer;
 }
 
 .card button:hover {
-  background-color: #e65100;
+  background-color: #1c1c1c;
 }
 
 .featured-spots {
@@ -222,7 +224,7 @@ nav ul li a {
 }
 
 .featured-spots h2 {
-  color: #f57c00;
+  color: #ffffff;
   margin-bottom: 30px;
 }
 
@@ -234,7 +236,8 @@ nav ul li a {
 }
 
 .spot-card {
-  background: #fff;
+  background: #f0efeb;
+  border: 1px solid #6b705c;
   border-radius: 8px;
   box-shadow: 0 2px 6px rgba(0,0,0,0.1);
   width: 280px;
@@ -265,12 +268,12 @@ nav ul li a {
 .spot-name {
   margin: 10px 0;
   font-size: 1.2rem;
-  color: #333;
+  color: #2f3e46;
 }
 
 .btn-view {
-  background: #f57c00;
-  color: #fff;
+  background: #6b705c;
+  color: #ffffff;
   border: none;
   padding: 8px 15px;
   border-radius: 4px;
@@ -278,7 +281,7 @@ nav ul li a {
 }
 
 .btn-view:hover {
-  background: #ff9800;
+  background: #7c836d;
 }
 
 
@@ -358,15 +361,15 @@ textarea {
 input:focus,
 select:focus,
 textarea:focus {
-  border-color: #ff9800; /* warm orange accent */
+  border-color: #a5a58d; /* warm orange accent */
   box-shadow: 0 0 5px rgba(255,152,0,0.5);
   outline: none;
 }
 
 /* Submit button */
 button {
-  background: #f39f03; /* deep green */
-  color: #fff;
+  background: #6b705c; /* deep green */
+  color: #ffffff;
   padding: 12px 20px;
   border: none;
   border-radius: 6px;
@@ -489,7 +492,7 @@ footer {
 }
 
 .directory h2 {
-  color: #f57c00;
+  color: #2f3e46;
   margin-bottom: 30px;
 }
 
@@ -575,7 +578,7 @@ footer {
 }
 
 .foodspot-right h2 {
-  color: #f57c00;
+  color: #2f3e46;
   margin-bottom: 15px;
 }
 
@@ -609,7 +612,7 @@ footer {
 }
 
 .view-input:focus {
-  border-color: #f57c00;
+  border-color: #a5a58d; /* warm orange accent */
   outline: none;
   box-shadow: 0 0 5px rgba(245, 124, 0, 0.4);
 }
@@ -622,7 +625,7 @@ footer {
 
 /* Button styling */
 .btn-visit {
-  background: #f57c00;
+  background: #6b705c;
   color: #fff;
   border: none;
   padding: 10px 20px;
@@ -631,7 +634,7 @@ footer {
 }
 
 .btn-visit:hover {
-  background: #ff9800;
+  background: #1b5e20;
 }
 
 /* Responsive rule for mobile */
