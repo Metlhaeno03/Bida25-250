@@ -650,3 +650,45 @@ footer {
     width: 100%;             
   }
 }
+
+/* 1. Base rules for ALL backgrounds */
+body {
+    /* Ensures the image scales perfectly to fit mobile, tablet, and desktop */
+    background-size: cover;
+    
+    /* Keeps the most important part of the image centered */
+    background-position: center center;
+    
+    /* Optional but highly recommended: Keeps the background fixed while the user scrolls! */
+    background-attachment: fixed;
+    
+    background-repeat: no-repeat;
+    
+    /* Ensures your main text color is white so it shows up against the background */
+    color: #ffffff; 
+}
+
+/* 2. The Readability Overlay */
+/* This adds a semi-transparent dark tint over your image so your text doesn't get lost */
+body {
+    min-height: 100vh; /* Ensures the body always fills the screen */
+    margin: 0;         /* Removes default browser spacing */
+    background-size: cover;
+    background-position: center center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    color: #ffffff; 
+}
+
+/* 3. Your Specific Page Backgrounds */
+/* You will need to replace the 'your-image.jpg' with your actual file names */
+.bg-home { background-image: url('home-savanna.jpg'); }
+.bg-about { background-image: url('about-culture.jpg'); }
+.bg-directory { background-image: url('directory-market.jpg'); }
+.bg-map { background-image: url('map-sunset.jpg'); }
+.bg-feedback { background-image: url('feedback-food.jpg'); }
+
+/* 4. Your Individual Food Spot Backgrounds */
+.bg-spot- { background-image: url('picture.jpg'); }
+.bg-spot-{ background-image: url('picture.jpg'); }
+.bg-spot- { background-image: url('picture.jpg'); }

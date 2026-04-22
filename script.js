@@ -104,3 +104,140 @@ navLinks.forEach(link => {
         link.classList.add('active');
     }
 });
+
+// =========================================
+// DYNAMIC FOOD SPOTS DATABASE & LOGIC
+// =========================================
+
+// 1. The Database: Store all your restaurants here!
+const foodDatabase = {
+    'spot1': {
+        name: "Palapye Food Market",
+        address: "Main Intersection, Palapye",
+        hours: "8:00 AM - 6:00 PM",
+        reviews: "⭐⭐⭐⭐⭐ (120 Reviews)",
+        description: "A vibrant community market and the absolute best place to try traditional Seswaa cooked over an open fire.",
+        bgClass: "bg-spot-palapye", // The background CSS class
+        menu: [
+            "Traditional Seswaa & Pap - P60",
+            "Morogo (Wild Spinach) - P25",
+            "Fresh Ginger Beer - P15"
+        ],
+        photos: [
+            "https://via.placeholder.com/150/36454F/FFFFFF?text=Dish+1", 
+            "https://via.placeholder.com/150/36454F/FFFFFF?text=Dish+2",
+            "https://via.placeholder.com/150/36454F/FFFFFF?text=Dish+3"
+        ] // Replace these URLs with your actual image paths like 'images/food1.jpg'
+    },
+    'spot2': {
+        name: "Gaborone Central Grill",
+        address: "CBD, Gaborone",
+        hours: "11:00 AM - 10:00 PM",
+        reviews: "⭐⭐⭐⭐ (85 Reviews)",
+        description: "Experience amazing sunset dining with a mix of modern and traditional plates right in the heart of the capital.",
+        bgClass: "bg-spot-gaborone",
+        menu: [
+            "Flame-Grilled Beef - P120",
+            "Chakalaka & Wors - P80",
+            "Craft Lemonade - P30"
+        ],
+        photos: [
+            "https://via.placeholder.com/150/2c4c7c/FFFFFF?text=Dish+1",
+            "https://via.placeholder.com/150/2c4c7c/FFFFFF?text=Dish+2"
+        ]
+    }
+};
+
+// 2. The Logic: This runs when the page loads
+document.addEventListener("DOMContentLoaded", () => {
+    // Look at the URL to see if there is an ID (e.g., Food spot.html?id=spot1)
+    const urlParams = new URLSearchParams(window.location.search);
+    const spotId = urlParams.get('id');
+
+    // If an ID exists AND it matches something in our database...
+    if (spotId && foodDatabase[spotId]) {
+        const data = foodDatabase[spotId];
+
+        // Change the background image class dynamically
+        document.body.className = data.bgClass;
+
+        // Inject the text data
+        document.getElementById('spot-title').textContent = data.name;
+        document.getElementById('spot-address').textContent = data.address;
+        document.getElementById('spot-hours').textContent = data.hours;
+        document.getElementById('spot-reviews').textContent = data.reviews;
+        document.getElementById('spot-desc').textContent = data.description;
+
+        // Inject the Menu items list
+        const menuList = document.getElementById('spot-menu');
+        menuList.innerHTML = ""; // Clear out any old data
+        data.menu.forEach(item => {
+            menuList.innerHTML += `<li>${item}</li>`;
+        });
+
+        // Inject the Photos
+        const photoGallery = document.getElementById('spot-photos');
+        photoGallery.innerHTML = ""; // Clear out any old data
+        data.photos.forEach(photoUrl => {
+            photoGallery.innerHTML += `<img src="${photoUrl}" alt="Food image" style="width:150px; margin-right:10px; border-radius:8px;">`;
+        });
+    }
+});
+
+// script.js
+
+// Load JSON data
+fetch('foodspots.json')
+  .then(response => response.json())
+  .then(spots => {
+    const container = document.getElementById('directory-container');
+
+    spots.forEach(spot => {
+      const listing = document.createElement('div');
+      listing.className = 'listing';
+
+      // Build photo gallery
+      let photosHTML = '';
+      if (spot.photos) {
+        spot.photos.forEach(photo => {
+          photosHTML += `<img src="${photo}" alt="${spot.name} photo">`;
+        });
+      }
+
+      // Build menu list
+      let menuHTML = '<ul class="menu-list">';
+      if (spot.menu) {
+        spot.menu.forEach(item => {
+          menuHTML += `<li>${item}</li>`;
+        });
+      }
+      menuHTML += '</ul>';
+
+      listing.innerHTML = `
+        <div class="card shadow-sm border-0">
+          <div class="card-body">
+            <h5 class="card-title">${spot.name}</h5>
+            <p class="card-text text-muted">${spot.description}</p>
+
+            <div class="photos">
+              <h6>Food Photos</h6>
+              <div class="photo-gallery">${photosHTML}</div>
+            </div>
+
+            <div class="menu">
+              <h6>Menu Items</h6>
+              ${menuHTML}
+            </div>
+
+            <div class="btn-group">
+              <button class="btn btn-outline-primary btn-sm mt-2 view-map">View on Map</button>
+              <a href="${spot.link}" class="btn btn-outline-secondary btn-sm mt-2">View More</a>
+            </div>
+          </div>
+        </div>
+      `;
+
+      container.appendChild(listing);
+    });
+  })
+  .catch(error => console.error('Error loading food spots:', error));
