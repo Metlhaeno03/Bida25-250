@@ -241,3 +241,18 @@ fetch('foodspots.json')
     });
   })
   .catch(error => console.error('Error loading food spots:', error));
+
+  // =========================================
+// HAMBURGER MENU TOGGLE LOGIC
+// =========================================
+
+// Grab the button and the navigation menu
+const hamburgerBtn = document.getElementById('hamburger-btn');
+const navLinksMenu = document.getElementById('nav-links');
+
+// When the button is clicked, toggle the 'show-menu' class on and off
+if (hamburgerBtn && navLinksMenu) {
+    hamburgerBtn.addEventListener('click', () => {
+        navLinksMenu.classList.toggle('show-menu');
+    });
+}

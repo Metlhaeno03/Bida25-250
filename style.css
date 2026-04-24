@@ -751,3 +751,56 @@ body {
 .bg-spot- { background-image: url('picture.jpg'); }
 .bg-spot-{ background-image: url('picture.jpg'); }
 .bg-spot- { background-image: url('picture.jpg'); }
+
+/* =========================================
+   5. HAMBURGER MENU & MOBILE STYLES
+   ========================================= */
+
+/* Make the header a flexbox so the logo and hamburger sit side-by-side */
+.main-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap; /* Allows the nav to drop down below the logo */
+  padding: 15px 20px; /* Add some breathing room */
+}
+
+/* Hide the hamburger button on Desktop */
+.hamburger {
+  display: none;
+  font-size: 35px;
+  background: none;
+  border: none;
+  color: #ffffff; /* White to match your text */
+  cursor: pointer;
+}
+
+/* --- MOBILE ONLY STYLES (Screens smaller than 768px) --- */
+@media (max-width: 768px) {
+  
+  /* Show the hamburger icon */
+  .hamburger {
+    display: block; 
+  }
+
+  /* Hide the navigation boxes by default */
+  .main-nav {
+    display: none; 
+    width: 100%;
+    flex-direction: column; /* Stack the boxes vertically */
+    align-items: stretch; /* Make boxes fill the width */
+    gap: 10px;
+    padding-top: 15px;
+  }
+
+  /* Make the individual boxes full-width so they are easy to tap */
+  .nav-box {
+    text-align: center;
+    width: 100%;
+  }
+
+  /* The magic class we will add with JavaScript to show the menu! */
+  .main-nav.show-menu {
+    display: flex;
+  }
+}
