@@ -6,46 +6,40 @@
   <title>Food Spots Directory | Savanna Eats</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"> 
   <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+<script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+
 </head>
 <body class="bg-directory">
   <header>
     <div class="logo">
     <img src="Logo.png" alt="Savanna Eats Logo">
   </div>
-
   
-   <nav class="main-nav">
-  <a href="index.html" class="nav-box">Home</a>
-  <a href="about.html" class="nav-box">About</a>
-  <a href="Food spots directory.html" class="nav-box">Directory</a>
-  <a href="Food spot.html" class="nav-box">Spots</a>
-  <a href="Map.html" class="nav-box">Map</a>
-  <a href="Feedback.html" class="nav-box">Feedback</a>
+  <nav class="main-nav">
+   <button class="nav-toggle" id="nav-toggle">☰ Menu</button>
+  <ul class="nav-links" id="nav-links">
+    <li><a href="index.html" class="nav-box">Home</a></li>
+    <li><a href="about.html" class="nav-box">About</a></li>
+    <li><a href="Food spots directory.html" class="nav-box">Directory</a></li>
+    <li><a href="Food spot.html" class="nav-box">Spots</a></li>
+    <li><a href="Map.html" class="nav-box">Map</a></li>
+    <li><a href="Feedback.html" class="nav-box">Feedback</a></li>
+  </ul>
 </nav>
 
   </header>
 
   <section class="directory">
     <h1>Explore Food Spots</h1>
-    <div class="search-bar">
-      <input type="text" placeholder="Search food spots...">
-      <button>Search</button>
-    </div>
-    <section class="directory">
-  <h2>Food Spots Directory</h2>
-  <div id="directory-container"></div>
+    <div class="search-bar mb-3">
+    <input type="text" id="searchInput" placeholder="Search food spots..." class="form-control d-inline-block w-75">
+    <button id="searchBtn" class="btn btn-success">Search</button>
+  </div>
+
+  <h2 class="mb-4 text-success">Food Spots Directory</h2>
+  <div id="directory-container" class="row g-3"></div>
 </section>
-
-
-
-<section class="map">
-  <h2>Food Spots Map</h2>
-  <div id="savannaMap"></div>
-</section>
-
-
-    <!-- Spot listings go here -->
-  </section>
 
   <footer>
      <p>Contact Info | Social Media | © 2026 Savanna Eats</p>

@@ -751,3 +751,62 @@ body {
 .bg-spot- { background-image: url('picture.jpg'); }
 .bg-spot-{ background-image: url('picture.jpg'); }
 .bg-spot- { background-image: url('picture.jpg'); }
+
+/* Navbar base */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center ;
+  background-color: none ; /* olive green */
+  padding: 10px 20px;
+  color: white;
+}
+
+.nav-brand {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+.nav-links li a {
+  color: white;
+  text-decoration: none;
+  font-size: 1rem;
+}
+
+/* Hamburger button hidden on desktop */
+.nav-toggle {
+  display: none;
+  font-size: 1.2rem;
+  background: none;
+  border: none;
+  color: rgb(29, 28, 28);
+  cursor: pointer;
+}
+
+/* Responsive rules */
+@media (max-width: 768px) {
+  .nav-links {
+    display: none; /* hide links initially */
+    flex-direction: column;
+    background-color: none;
+    position: absolute;
+    top: 60px;
+    right: 20px;
+    padding: 10px;
+    border-radius: 6px;
+  }
+
+  .nav-links.show {
+    display: flex; /* show when toggled */
+  }
+
+  .nav-toggle {
+    display: block; /* show hamburger on mobile */
+  }
+}

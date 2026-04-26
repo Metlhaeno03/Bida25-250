@@ -16,15 +16,18 @@
     <div class="logo">
       <img src="Logo.png" alt="Savanna Eats Logo">
     </div>
-
-  <nav class="main-nav">
-  <a href="index.html" class="nav-box">Home</a>
-  <a href="about.html" class="nav-box">About</a>
-  <a href="Food spots directory.html" class="nav-box">Directory</a>
-  <a href="Food spot.html" class="nav-box">Spots</a>
-  <a href="Map.html" class="nav-box">Map</a>
-  <a href="Feedback.html" class="nav-box">Feedback</a>
-</nav>
+    
+ <nav class="main-nav">
+   <button class="nav-toggle" id="nav-toggle">☰ Menu</button>
+  <ul class="nav-links" id="nav-links">
+    <li><a href="index.html" class="nav-box">Home</a></li>
+    <li><a href="about.html" class="nav-box">About</a></li>
+    <li><a href="Food spots directory.html" class="nav-box">Directory</a></li>
+    <li><a href="Food spot.html" class="nav-box">Spots</a></li>
+    <li><a href="Map.html" class="nav-box">Map</a></li>
+    <li><a href="Feedback.html" class="nav-box">Feedback</a></li>
+  </ul>
+ </nav>
   </header>
 
   <section class="map-page container mt-4"> <h1>Find Food Spots Near You</h1>
@@ -39,39 +42,11 @@
       <div id="map"></div> 
     </div>
     
-    <section class="featured-spots">
+  <section class="featured-spots">
   <h2>Featured Food Spots</h2>
-  <div class="spots-container">
-
-    <div class="spot-card">
-      <img src="images/spot1.jpg" alt="Food Spot 1">
-      <div class="spot-info">
-        <span class="spot-label">Food Spot 1</span>
-        <h3 class="spot-name">Spot Name 1</h3>
-        <button class="btn-view">View on Map</button>
-      </div>
-    </div>
-
-    <div class="spot-card">
-      <img src="images/spot2.jpg" alt="Food Spot 2">
-      <div class="spot-info">
-        <span class="spot-label">Food Spot 2</span>
-        <h3 class="spot-name">Spot Name 2</h3>
-        <button class="btn-view">View on Map</button>
-      </div>
-    </div>
-
-    <div class="spot-card">
-      <img src="images/spot3.jpg" alt="Food Spot 3">
-      <div class="spot-info">
-        <span class="spot-label">Food Spot 3</span>
-        <h3 class="spot-name">Spot Name 3</h3>
-        <button class="btn-view">View on Map</button>
-      </div>
-    </div>
-
-  </div>
+  <div id="spots-container" class="spots-container"></div>
 </section>
+  
 
 
   <footer class="mt-5 text-center">
