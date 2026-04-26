@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Food Spot | Savanna Eats</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+</head>
+<body id="dynamic-spot-body">
+    <div class="bg-overlay">
+        
+       <header>
+           <nav class="navbar navbar-expand-lg navbar-dark bg-dark bg-opacity-75" aria-label="Main navigation">
+                <div class="container-fluid px-4"> 
+            
+                    <a class="navbar-brand" href="index.html" aria-label="Savanna Eats Home">
+                        <img src="logo.png" alt="Savanna Eats Logo" style="width: 140px; height: auto; max-width: 100%;">
+                    </a>
+            
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+            
+                <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                   <ul class="navbar-nav">
+                     <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                     <li class="nav-item"><a class="nav-link" href="about.html">About Us</a></li>
+                     <li class="nav-item"><a class="nav-link" href="directory.html">Directory</a></li>
+                     <li class="nav-item"><a class="nav-link" href="map.html">Map</a></li>
+                     <li class="nav-item"><a class="nav-link" href="feedback.html">Feedback</a></li>
+                   </ul>
+                </div>
+            
+              </div>
+           </nav>
+        </header>
+
+        <main class="container my-5 bg-dark bg-opacity-75 p-4 rounded text-white" style="flex: 1;">
+            <div class="row">
+                <div class="col-md-6 mb-4">
+                    <img id="spot-main-image" src="" class="img-fluid rounded mb-3" alt="Food Spot Image">
+                    <h4>Menu Preview</h4>
+                    <ul id="spot-menu-list" class="list-group list-group-flush text-dark">
+                    </ul>
+                </div>
+                <div class="col-md-6">
+                    <h1 id="spot-name" class="fw-bold">Spot Name Loading...</h1>
+                    <p id="spot-address" class="lead text-warning">Address Info Loading...</p>
+                    <p id="spot-hours">Opening Hours Loading...</p>
+                    <div class="mb-3">
+                        <span id="spot-reviews">⭐⭐⭐⭐⭐ (XX Reviews)</span>
+                    </div>
+                    <p id="spot-description">Description text goes here...</p>
+                    <button class="btn btn-warning btn-lg mt-3 w-100">Visit Location</button>
+                </div>
+            </div>
+            <div class="row mt-5">
+                <div class="col-12">
+                    <h3 class="mb-3">Map Location</h3>
+                    <div id="spot-map-container" class="w-100 rounded" style="height: 300px; border: 2px solid #ff9800;"></div>
+                        <p>Interactive Map Loading...</p>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <footer class="text-white text-center py-4 mt-auto bg-dark">
+            <div class="container">
+                <p class="mb-1">Contact Info: hello@savannaeats.co.bw | +267 78757861</p>
+                <p class="mb-1">
+                    <a href="#" class="text-white text-decoration-none me-3" aria-label="Facebook">Facebook</a>
+                    <a href="#" class="text-white text-decoration-none me-3" aria-label="Instagram">Instagram</a>
+                    <a href="#" class="text-white text-decoration-none" aria-label="Twitter">Twitter</a>
+                </p>
+                <small>&copy; 2026 Savanna Eats. All rights reserved.</small>
+            </div>
+        </footer>
+
+    </div>
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="data.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
