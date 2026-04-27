@@ -4,7 +4,7 @@ html, body {
 }
 body {
     /* We will replace this placeholder with the savanna image we generate */
-    background-image: url('Background image.png'); 
+    background-image:url('https://images.unsplash.com/photo-1614531341130-3331c215e3aa?q=80&w=1920&auto=format&fit=crop');
     background-size: cover; /* Ensures the image covers the whole screen */
     background-position: center center;
     background-attachment: fixed; /* Magic trick: stops it from scrolling and pixelating! */
