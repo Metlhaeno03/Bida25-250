@@ -3,7 +3,7 @@ console.log("Javascript is connected!");
 
 document.addEventListener("DOMContentLoaded", () => {
     
-    // ==========================================
+  // ==========================================
     // LOGIC FOR THE DIRECTORY PAGE
     // ==========================================
     const spotGrid = document.getElementById("spot-grid");
@@ -33,8 +33,28 @@ document.addEventListener("DOMContentLoaded", () => {
             });
         };
 
-        renderCards(foodSpots);
+        // NEW: Check if the user came from the Homepage search bar
+        const urlParams = new URLSearchParams(window.location.search);
+        const urlQuery = urlParams.get('query');
 
+        if (urlQuery) {
+            // Fill the directory's search box with what they typed on the homepage
+            if (searchInput) searchInput.value = urlQuery;
+            
+            // Instantly filter the cards to match their search
+            const searchTerm = urlQuery.toLowerCase();
+            const filteredSpots = foodSpots.filter(spot => 
+                spot.name.toLowerCase().includes(searchTerm) || 
+                spot.category.toLowerCase().includes(searchTerm) ||
+                spot.address.toLowerCase().includes(searchTerm)
+            );
+            renderCards(filteredSpots);
+        } else {
+            // If they didn't search anything, just show all the spots normally
+            renderCards(foodSpots);
+        }
+
+        // Live typing search (for when they are already on the Directory page)
         if(searchInput) {
             searchInput.addEventListener("keyup", (event) => {
                 const searchTerm = event.target.value.toLowerCase();
@@ -90,7 +110,7 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     }
 
-    // ==========================================
+  // ==========================================
     // LOGIC FOR THE MAIN FULL-PAGE MAP
     // ==========================================
     const mainMapContainer = document.getElementById('mainMap');
@@ -103,18 +123,45 @@ document.addEventListener("DOMContentLoaded", () => {
             attribution: '&copy; OpenStreetMap contributors'
         }).addTo(mainMap);
 
-        // Loop through all foodSpots in data.js and put a pin on the map for each one
-        foodSpots.forEach(spot => {
-            const marker = L.marker([spot.lat, spot.lng]).addTo(mainMap);
+        // Create a "Layer Group" - this lets us easily clear pins when searching
+        let markerGroup = L.layerGroup().addTo(mainMap);
+
+        // Function to draw the pins
+        const renderMapMarkers = (spotsToDisplay) => {
+            markerGroup.clearLayers(); // Wipe the current pins off the map
             
-            // When you click a pin, it shows a popup with a link to that spot's page!
-            marker.bindPopup(`
-                <div class="text-center">
-                    <b style="font-size: 1.1em;">${spot.name}</b><br>
-                    <span class="text-muted">${spot.category}</span><br>
-                    <a href="spot-details.html?id=${spot.id}" class="btn btn-sm btn-warning mt-2">View Details</a>
-                </div>
-            `);
-        });
+            spotsToDisplay.forEach(spot => {
+                const marker = L.marker([spot.lat, spot.lng]);
+                marker.bindPopup(`
+                    <div class="text-center">
+                        <b style="font-size: 1.1em;">${spot.name}</b><br>
+                        <span class="text-muted">${spot.category}</span><br>
+                        <a href="spot-details.html?id=${spot.id}" class="btn btn-sm btn-warning mt-2">View Details</a>
+                    </div>
+                `);
+                markerGroup.addLayer(marker); // Add the new pin to the group
+            });
+        };
+
+        // 1. Draw all pins when the page first loads
+        renderMapMarkers(foodSpots);
+
+        // 2. Make the map search bar work live
+        const mapSearchInput = document.getElementById('mapSearchInput');
+        if (mapSearchInput) {
+            mapSearchInput.addEventListener('keyup', (event) => {
+                const searchTerm = event.target.value.toLowerCase();
+                
+                // Filter the data based on what they typed
+                const filteredSpots = foodSpots.filter(spot => 
+                    spot.name.toLowerCase().includes(searchTerm) || 
+                    spot.category.toLowerCase().includes(searchTerm) ||
+                    spot.address.toLowerCase().includes(searchTerm)
+                );
+                
+                // Redraw the map with only the matching pins
+                renderMapMarkers(filteredSpots);
+            });
+        }
     }
-});
+}); 
