@@ -7,6 +7,11 @@ const foodSpots = [
         category: "Traditional Tswana cuisine",
         image: "https://via.placeholder.com/600x400?text=Seswaa+Dish", 
         bgImage: "https://via.placeholder.com/1920x1080?text=Restaurant+Vibe+Background", 
+        gallery: [
+            "https://via.placeholder.com/800x400?text=Inside+the+Restaurant",
+            "https://via.placeholder.com/800x400?text=Plating+the+Seswaa",
+            "https://via.placeholder.com/800x400?text=Happy+Customers"
+        ],
         rating: "⭐⭐⭐⭐⭐ (124 Reviews)",
         address: "Plot 1234, Main Mall, Gaborone",
         lat: -24.6282, // Added Latitude for Gaborone
@@ -22,16 +27,21 @@ const foodSpots = [
     },
     {
         id: "palapye-breeze",
-        name: "Palapye Breeze Cafe",
-        category: "Cafes",
-        image: "https://via.placeholder.com/600x400?text=Coffee+and+Cake",
+        name: "Big on burgers",
+        category: "Fast food",
+        image: "https://via.placeholder.com/600x400?text=Boerwors + fries + Burgers",
         bgImage: "https://via.placeholder.com/1920x1080?text=Cozy+Cafe+Background",
+        gallery: [
+            "https://via.placeholder.com/800x400?text=Half chicken + Loaded fries + Wraps",
+            "https://via.placeholder.com/800x400?text=Burgers + Fries + Boerwors + Half chicken",
+            "https://via.placeholder.com/800x400?text=Outdoor+Seating"
+        ],
         rating: "⭐⭐⭐⭐ (85 Reviews)",
-        address: "Along the A1, Palapye, Central District",
-        lat: -22.5500, // Added Latitude for Palapye
-        lng: 27.1300,  // Added Longitude for Palapye
+        address: "Opposite New Era college ,Block 8 , Gaborone",
+        lat: -24.60302, 
+        lng: 25.91894, 
         hours: "Mon - Sat: 7:00 AM - 6:00 PM",
-        description: "A cozy, hidden gem offering the best coffee in Palapye. Perfect for a quick stopover or a relaxing afternoon. Pair our signature roasts with freshly baked pastries.",
+        description: "A cozy, hidden gem offering the best fast foods in Gaborone. Perfect for a quick stopover or a relaxing afternoon. Pair our rich flavors with our signature dishes.",
         menu: [
             "Iced Caramel Macchiato",
             "Savory Beef Sausage Roll",

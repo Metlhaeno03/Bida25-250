@@ -84,7 +84,22 @@ document.addEventListener("DOMContentLoaded", () => {
             document.getElementById("spot-hours").innerText = spotData.hours;
             document.getElementById("spot-reviews").innerText = spotData.rating;
             document.getElementById("spot-description").innerText = spotData.description;
-            document.getElementById("spot-main-image").src = spotData.image;
+            const carouselContainer = document.getElementById("carousel-inner-container");
+            if (carouselContainer && spotData.gallery) {
+                carouselContainer.innerHTML = ""; // Clear it out first
+                
+                spotData.gallery.forEach((imageUrl, index) => {
+                    // Bootstrap needs the very first image to have the class "active" to work
+                    const isActive = index === 0 ? "active" : "";
+                    
+                    const slideHTML = `
+                        <div class="carousel-item ${isActive}">
+                            <img src="${imageUrl}" class="d-block w-100" alt="Gallery image ${index + 1}" style="height: 400px; object-fit: cover;">
+                        </div>
+                    `;
+                    carouselContainer.innerHTML += slideHTML;
+                });
+            }
             dynamicSpotBody.style.backgroundImage = `url('${spotData.bgImage}')`;
 
             const menuList = document.getElementById("spot-menu-list");
@@ -161,7 +176,9 @@ document.addEventListener("DOMContentLoaded", () => {
                 
                 // Redraw the map with only the matching pins
                 renderMapMarkers(filteredSpots);
+  
             });
         }
     }
+
 }); 
