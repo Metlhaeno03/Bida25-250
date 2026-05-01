@@ -4,7 +4,7 @@ html, body {
 }
 body {
     font-family: 'Open Sans', sans-serif;
-    background-image : url('main-savanna-bg.png?v=1');
+    background-image : url('main-savanna-bg.jpg');
     background-size: cover; /* Ensures the image covers the whole screen */
     background-position: center center;
     background-attachment: fixed; /* Magic trick: stops it from scrolling and pixelating! */

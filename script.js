@@ -102,11 +102,11 @@ document.addEventListener("DOMContentLoaded", () => {
             }
             dynamicSpotBody.style.backgroundImage = `url('${spotData.bgImage}')`;
 
-            const menuList = document.getElementById("spot-menu-list");
-            menuList.innerHTML = ""; 
-            spotData.menu.forEach(item => {
-                menuList.innerHTML += `<li class="list-group-item">${item}</li>`;
-            });
+            // SINGLE MENU IMAGE LOGIC
+            const menuImgElement = document.getElementById("spot-menu-image");
+            if (menuImgElement && spotData.menuImage) {
+                menuImgElement.src = spotData.menuImage;
+            }
 
             // INDIVIDUAL PAGE MAP LOGIC
             const spotMapContainer = document.getElementById('spot-map-container');
